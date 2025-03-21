@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button'
 import axios from 'axios'
 import { Loader } from 'lucide-react'
+import Image from 'next/image'
 import React, { useState } from 'react'
 import { toast } from 'sonner'
 
@@ -54,12 +55,19 @@ const Hero = () => {
             {/* Content */}
             <div className='relative z-10 text-white flex flex-col items-center justify-center'>
                 <h1
+                    data-aos="fade-up"
+                    data-aos-delay="100"
                     className='text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-center bg-gradient-to-r from-orange-300 to-blue-400 bg-clip-text text-transparent'
                 >
                     Create Beautiful Image with <br /> Artificial Intelligence
                 </h1>
 
-                <p className='mt-3 text-sm md;text-base font-semibold text-center text-gray-300 '>Get Started with Our AI-powered Image Generator tools </p>
+                <p
+                    data-aos="fade-up"
+                    className='mt-3 text-sm md;text-base font-semibold text-center text-gray-300'
+                >
+                    Get Started with Our AI-powered Image Generator tools 
+                </p>
 
                 {/* Prompt input box */}
                 <div className="h-11 md:h-16 w-[95%] sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[60%] bg-white rounded-lg mt-12 px-2 md:px-6 flex items-center justify-between">
@@ -99,7 +107,7 @@ const Hero = () => {
                 {
                     image && (
                         <div className='mt-8 flex flex-col items-center'>
-                            <img 
+                            <Image 
                                 src={image} 
                                 alt='Generated pic' 
                                 className='max-w-full h-[500px] rounded-lg shadow-lg' 
